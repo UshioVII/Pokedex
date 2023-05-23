@@ -348,22 +348,28 @@ header form {
 /* Container Filters */
 .container-filters {
 	display: flex;
-	justify-content: center;
-	position: fixed;
-	top: 0;
-	left: -300px;
+	flex-direction: column;
+	justify-content: flex-start;
+	position: absolute;
+	top: -103%;
+	left: 10%;
 	width: 230px;
 	color: #555;
-	background-image: url(../public/body_bg.png);
+	background-image: url(/public/body_bg.png);
 	height: 100%;
-	padding-top: 140px;
-	transition: all 0.3s linear;
+	padding-top: 20px;
+	margin-top: 4%;
+	border-radius: 10px;
+	border: 1px solid #404040;
+	text-align: center;
 }
 
 .container-filters.active {
-	left: 0;
+	top: 41%; 
 	background-image: url(../public/body_bg.png);
 }
+
+
 
 /* Agregar un fondo transparente que ocupe toda la pantalla */
 .backdrop {
@@ -686,6 +692,14 @@ counter-stat {
 	transition-duration: 0.3s;
 }
 
+
+@media (min-width: 325px){
+	.container-filters.active {
+    top: 37%;
+}
+
+}
+
 @media (max-width: 400px) {
 	.card-list-pokemon {
 		grid-template-columns: repeat(1, 1fr);
@@ -693,6 +707,11 @@ counter-stat {
 }
 
 @media (min-width: 401px) and (max-width: 767px) {
+	.container-filters.active {
+		left: 7%;
+    top: 37%;
+}
+
 	.card-list-pokemon {
 		grid-template-columns: repeat(2, 1fr);
 		padding: 0;
@@ -701,6 +720,10 @@ counter-stat {
 
 @media (min-width: 768px) and (max-width: 1000px) {
 
+	.container-filters.active {
+    left: 4%;
+    top: 33%;
+}
 
 	.alert div {
 		width: 65%;
@@ -712,6 +735,11 @@ counter-stat {
 }
 
 @media (min-width: 1001px) {
+
+	.container-filters.active {
+		left: 3%;
+    top: 31%;
+}
 
 	.alert {
 		width: 90%;
@@ -727,9 +755,21 @@ counter-stat {
 }
 
 @media (min-width: 1440px) {
+	
+	.container-filters.active{
+    left: 10%;
+    top: 26%;
+	}
 
 	.alert div {
 		width: 50%;
 	}
 
+}
+
+@media (min-width: 1650px){
+	.container-filters.active{
+		left: 15%;
+    top: 23%;
+	}
 }
