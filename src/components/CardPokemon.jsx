@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const CardPokemon = ({ pokemon }) => {
+export const CardPokemon = ({ pokemon, showDeleteButton, onDelete }) => {
 	return (
-		<Link to={`/pokemon/${pokemon.id}`} className='card-pokemon'>
-			<div className='card-img'>
-			<span className='pokemon-id'>N° {pokemon.id}</span>
+		<div className='card-pokemon'>
+			<Link to={`/pokemon/${pokemon.id}`} className='card-img'>
+				<span className='pokemon-id'>N° {pokemon.id}</span>
 				<img
 					src={
 						pokemon?.sprites?.other?.dream_world?.front_default ||
@@ -13,9 +13,8 @@ export const CardPokemon = ({ pokemon }) => {
 					}
 					alt={pokemon?.name}
 				/>
-			</div>
+			</Link>
 			<div className='card-info'>
-				
 				<h3>{pokemon.name}</h3>
 				<div className='card-types'>
 					{pokemon.types.map(type => (
@@ -25,6 +24,11 @@ export const CardPokemon = ({ pokemon }) => {
 					))}
 				</div>
 			</div>
-		</Link>
+			{showDeleteButton && (
+				<button className='delete-button' onClick={onDelete}>
+					Eliminar Tarjeta
+				</button>
+			)}
+		</div>
 	);
 };

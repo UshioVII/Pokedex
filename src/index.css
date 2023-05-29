@@ -37,6 +37,7 @@
 	box-sizing: border-box;
 	color: #fff;
 	font-family: "Roboto", arial, sans-serif;
+	text-decoration: none;
 }
 
 body {
@@ -248,6 +249,7 @@ header form {
 
 .card-info h3 {
 	color: #fff;
+	text-transform: capitalize;
 }
 
 .pokemon-id {
@@ -267,6 +269,18 @@ header form {
 	color: white;
 	font-weight: bold;
 	text-transform: capitalize;
+}
+
+.delete-button{
+	background: var(--color-poke);
+	border: none;
+	border-radius: 0px 0px 8px 8px;
+}
+
+.delete-button:hover{
+	color: #000;
+	background: var(--color-dex);
+	transition-duration: 0.2s;
 }
 
 /* Types of Pokemon */

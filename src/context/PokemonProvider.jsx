@@ -16,6 +16,12 @@ export const PokemonProvider = ({ children }) => {
 	const [loading, setLoading] = useState(true);
 	const [active, setActive] = useState(false);
 
+
+	const deletePokemonCard = (pokemonId) => {
+    setAllPokemons(allPokemons.filter(pokemon => pokemon.id !== pokemonId));
+    setfilteredPokemons(filteredPokemons.filter(pokemon => pokemon.id !== pokemonId));
+  };
+
 	// lLamar 12 pokemones a la API
 	const getAllPokemons = async (limit = 12) => {
 		const baseURL = 'https://pokeapi.co/api/v2/';
@@ -128,28 +134,26 @@ export const PokemonProvider = ({ children }) => {
 		}
 	};
 
-	return (
-		<PokemonContext.Provider
-			value={{
-				valueSearch,
-				onInputChange,
-				onResetForm,
-				allPokemons,
-				globalPokemons,
-				getPokemonByID,
-				onClickLoadMore,
-				// Loader
-				loading,
-				setLoading,
-				// Btn Filter
-				active,
-				setActive,
-				// Filter Container Checkbox
-				handleCheckbox,
-				filteredPokemons,
-			}}
-		>
-			{children}
-		</PokemonContext.Provider>
-	);
+  return (
+    <PokemonContext.Provider
+      value={{
+        valueSearch,
+        onInputChange,
+        onResetForm,
+        allPokemons,
+        globalPokemons,
+        getPokemonByID,
+        onClickLoadMore,
+        loading,
+        setLoading,
+        active,
+        setActive,
+        handleCheckbox,
+        filteredPokemons,
+        deletePokemonCard,
+      }}
+    >
+      {children}
+    </PokemonContext.Provider>
+  );
 };
