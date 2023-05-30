@@ -376,11 +376,13 @@ header form {
 	border-radius: 10px;
 	border: 1px solid #404040;
 	text-align: center;
+	display: none;
 }
 
 .container-filters.active {
 	top: 41%; 
 	background-image: url(../public/body_bg.png);
+	display: block;
 }
 
 
@@ -768,7 +770,7 @@ counter-stat {
 	}
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1440px) and (max-width: 1679px) {
 	
 	.container-filters.active{
     left: 10%;
@@ -781,9 +783,9 @@ counter-stat {
 
 }
 
-@media (min-width: 1650px){
+@media (min-width: 1680px){
 	.container-filters.active{
 		left: 15%;
-    top: 23%;
+    top: 25%;
 	}
 }
