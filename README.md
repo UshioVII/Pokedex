@@ -25,7 +25,7 @@ Inspirada en la famosa Pokédex de Pokémon, esta aplicación está construida c
 ## Recursos adicionales
 
 - Consulta la [documentación de React](https://es.reactjs.org/) para más información sobre React.
-- Explora la [página oficial de Pokémon](https://www.pokemon.com/es/pokedex) para descubrir más sobre estos fascinantes seres.
+- Explora la [página oficial de Pokémon](https://www.pokemon.com/es/pokedex). 
 
 ¡Diviértete explorando el mundo Pokémon con la Pokedex! 🌍🔍
 
